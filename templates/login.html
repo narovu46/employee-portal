@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Sign in</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <label>Username</label>
+    <input type="text" name="username" autofocus required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <button class="btn" type="submit">Sign in</button>
+  </form>
+</div>
+{% endblock %}

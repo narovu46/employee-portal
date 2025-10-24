@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Welcome, {{ user.get_full_name|default:user.username }}</h2>
+  <p>This is your dummy employee dashboard.</p>
+  <ul>
+    <li>Last login: {{ user.last_login }}</li>
+    <li>Email: {{ user.email|default:"(not set)" }}</li>
+  </ul>
+</div>
+{% endblock %}
